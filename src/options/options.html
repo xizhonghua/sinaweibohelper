@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="../style/common.css"/>
+	<link rel="stylesheet" href="options.css"/>
+</head>
+<body>
+<div id="options">
+	<h1 id="option-title">{optionsTitle}</h1>
+	<div id="config">
+		<div id="switch-user" class="cx-box mgud6">
+			<div class="op-title" id="account-title">{optionsAccountTitle}</div>
+		</div>
+		
+		<div id="other-features" class="cx-box mgud6">
+			<div class="op-title" id="others-title">{others}</div>			
+			<div style="display: none;">
+				<input id="chk-load-new-feeds" type="checkbox"/> <span id="auto-load-new-feeds">{optionsAutoLoadNewFeeds}</span>
+			</div>
+<!--	    <div>
+				<input id="chk-hide-AD" type="checkbox"/> <span id="hide-ads">{optionsHideAds}</span>
+			</div>
+-->
+			<div>
+				<span id="fromApp">{from}</span> : 
+				<select id="select-fromApp">
+					<option value="" id="option-default">{Default}</option>
+					<option value="5786724301">iPhone</option>
+					<option value="2849184197">iPad</option>
+					<option value="82966982">Weico.iPhone</option>
+					<option value="211160679">Weico.Android</option>	
+					<option value="" id="option-custom">{Custom}</option>					
+				</select>
+				AppKey: <input id="input-appkey" type="text"></input>
+			</div>
+		</div>		
+		<div class="cx-hr mgud12"></div>
+		<div id="save-options">
+			<input id="btn-save-options" type="button" value="{Save}" />
+			<input id="btn-reset-options" type="button" value="{Reset}" />
+		</div>
+	</div>
+	<div id="author">
+		©2011-2012 <a href="http://weibo.cn/xxfflower" target="_blank">@xxfflower</a> xizhonghua@gmail.com
+	</div>
+</div>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="options.js"></script>
+</body>
+</html>

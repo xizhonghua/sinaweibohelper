@@ -1,0 +1,106 @@
+{
+   "account": {
+      "description": "account",
+      "message": "account"
+   },
+   "contextMenuShareImage": {
+      "description": "Share Image to Weibo",
+      "message": "Share Image to Weibo"
+   },
+   "contextMenuSharePage": {
+      "description": "Share Page to Weibo",
+      "message": "Share Page to Weibo"
+   },
+   "contextMenuShareSelection": {
+      "description": "Share Selection to Weibo",
+      "message": "Share Selection to Weibo"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "Custom"
+   },
+   "default": {
+      "description": "Default",
+      "message": "Default"
+   },
+   "extDescription": {
+      "description": "Extension description.",
+      "message": "One-click share, user switch supported, batch remove followers, hide ads."
+   },
+   "extName": {
+      "description": "Extension name.",
+      "message": "Sina Weibo Helper"
+   },
+   "fromApp": {
+      "description": "From with app",
+      "message": "From"
+   },
+   "optionsAccountTitle": {
+      "description": "account title of the options page",
+      "message": "Account settings"
+   },
+   "optionsAutoLoadNewFeeds": {
+      "description": "text of the checkbox whether load new feeds automatically",
+      "message": "Load new feeds automatically"
+   },
+   "optionsHideAds": {
+      "description": "text for checkbox whether to hide the ads",
+      "message": "Hide ads."
+   },
+   "optionsReset": {
+      "description": "text for button to restore default settings",
+      "message": "Default"
+   },
+   "optionsSave": {
+      "description": "text for button to save settings",
+      "message": "Save"
+   },
+   "optionsTitle": {
+      "description": "Title of the options page.",
+      "message": "Sina Weibo Helper Settings"
+   },
+   "optionsUseUrlShortening": {
+      "description": "text for checkbox whether use url shortening.",
+      "message": "Use url shortening"
+   },
+   "others": {
+      "description": "others",
+      "message": "Others"
+   },
+   "password": {
+      "description": "password",
+      "message": "password"
+   },
+   "popupAddAccount": {
+      "description": "add account",
+      "message": "Add account"
+   },
+   "popupAtMe": {
+      "description": "atme",
+      "message": "@me"
+   },
+   "popupHome": {
+      "description": "home",
+      "message": "Home"
+   },
+   "popupMessages": {
+      "description": "Messages",
+      "message": "Messages"
+   },
+   "popupSettings": {
+      "description": "Settings",
+      "message": "Settings"
+   },
+   "popupShare": {
+      "description": "Share",
+      "message": "Share"
+   },
+   "popupShorten": {
+      "description": "Shorten",
+      "message": "Shorten"
+   },
+   "popupSwitchUser": {
+      "description": "Switch user",
+      "message": "Switch user"
+   }
+}
