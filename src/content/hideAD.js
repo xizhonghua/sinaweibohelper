@@ -48,6 +48,8 @@ function hide() {
         hideRightModule("legend:contains('公告栏')");
         hideRightModule("legend:contains('公告栏')");
         hideRightModule("legend:contains('人气图书')");
+        hideRightModule("legend:contains('人气图书')");
+        hideRightModule("legend:contains('热门歌曲')");
     });
         
     setTimeout(hide, 1000);
