@@ -47,6 +47,10 @@
       "description": "text for checkbox whether to hide the ads",
       "message": "Hide ads."
    },
+   "optionsEnableHideAds": {
+      "description": "text for checkbox whether to hide the ads",
+      "message": "Enable hide ads."
+   },
    "optionsReset": {
       "description": "text for button to restore default settings",
       "message": "Default"

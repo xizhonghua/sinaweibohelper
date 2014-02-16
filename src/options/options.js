@@ -7,15 +7,19 @@ var op = {
 	// attr: the attribute to bind
 	// value: the default value of the attribute
 	_bind: function(id, name, attr, value){
-		op._bindObjs[id] = {name:name, attr:attr, value:value};			
-		if(op._getConfig(name)==null){
+		op._bindObjs[id] = {name:name, attr:attr, value:value};
+		var v = op._getConfig(name);
+		if(v==null || v=="undefined"){
 			op._setConfig(name, value);
 		}
 	},		
 	_getConfig: function(name){
 		var defaultValue = arguments[1] ? arguments[1] : null;
 		var value = localStorage.getItem(name);
-		return value || defaultValue;
+		if(value == "true") value = true;
+		if(value == "false") value = false;
+		if(value == null) return defaultValue
+		return  value;
 	},
 	_setConfig: function(name, value){
 		localStorage.setItem(name, value);
@@ -36,9 +40,40 @@ var op = {
 			}
 		}
 		
-		op._bind("chk-hide-AD", "hideAD", "checked", "true");
+		// bind ads
+		op._bind("chk-enable-hide-AD", "enableHideAD", "checked", "true");
+		op._bind("chk-ad-hot-topic", "adHotTopic", "checked", "false");
+		op._bind("chk-ad-interest", "adInerest", "checked", "true");
+		op._bind("chk-ad-hot-weibo", "adHotWeibo", "checked", "true");
+		op._bind("chk-ad-app", "adApp", "checked", "true");
+        op._bind("chk-ad-title", "adTitle", "checked", "true");
+        op._bind("chk-ad-find-friend", "adFindFriend", "checked", "true");
+		op._bind("chk-ad-hot-music", "adOthers", "checked", "true");
+		
+		
+		// others
 		op._bind("chk-load-new-feeds", "autoLoadNewFeeds", "checked", "true");
 		op._bind("input-appkey", "fromAppkey", "val", "");
+		
+		//========================================
+		
+		$("#chk-enable-hide-AD").change(function(){
+		    var enableHideAD = $(this).prop("checked");
+		    $(".inner-check > input").each(function(index, val){
+		        if(!enableHideAD) {
+		            $(this).attr("disabled", true);
+		        }else{
+		            $(this).removeAttr("disabled");
+		        }
+		    });
+		   // op.save();
+		});
+		
+		// save on checkbox changed
+		$("input[id^='chk-'").change(function(){
+		    op.save();
+		});
+		
 		
 		$("#select-fromApp").change(function(){
 			$("#input-appkey").val($("#select-fromApp").val());
@@ -60,13 +95,16 @@ var op = {
 		});
 	},
 	i18n: function(){
-		$("#option-title").html(chrome.i18n.getMessage("optionsTitle"));
+	    var ver = " Ver: " + chrome.app.getDetails().version;
+		$("#option-title").html(chrome.i18n.getMessage("optionsTitle") + ver);
 		$("#account-title").html(chrome.i18n.getMessage("optionsAccountTitle"));
 		$(".account").html(chrome.i18n.getMessage("account") + ": ");
 		$(".password").html(chrome.i18n.getMessage("password") + ": ");
 		$("#others-title").html(chrome.i18n.getMessage("others"));
 		$("#auto-load-new-feeds").html(chrome.i18n.getMessage("optionsAutoLoadNewFeeds"));
+		
 		$("#hide-ads").html(chrome.i18n.getMessage("optionsHideAds"));
+		$("#enable-hide-ads").html(chrome.i18n.getMessage("optionsEnableHideAds"));
 		
 		$("#fromApp").html(chrome.i18n.getMessage("fromApp"));
 		$("#option-default").html(chrome.i18n.getMessage("default"));
@@ -83,13 +121,14 @@ var op = {
 			$(".input-name:eq(" + i + ")").val(name);
 			$(".input-password:eq(" + i + ")").val(password);
 		}
+		
 		for(id in op._bindObjs){
 			var obj=op._bindObjs[id];
 			var value=op._getConfig(obj.name, obj.value);
 			if(obj.attr=="val"){
 				$("#" + id).val(value);
-			}else if(obj.attr=="checked" && value=="false"){
-				$("#" + id).removeAttr(obj.attr);
+			}else if(obj.attr=="checked") {
+				$("#" + id).prop(obj.attr, value);
 			}else{
 				$("#" + id).attr(obj.attr, value);
 			}
@@ -107,6 +146,7 @@ var op = {
                 $('#select-fromApp').val(appKey);
         });
 		*/
+        $("#chk-enable-hide-AD").change();
 	},
 	save: function(){
 		for(var i=0;i<op.maxAccount;i++){
@@ -120,16 +160,18 @@ var op = {
 			var value = $("#" + id).attr(obj.attr);
 			if(obj.attr=="val"){
 				value = $("#" + id).val();
+			} else if(obj.attr=="checked") {
+			    value = $("#" + id).prop(obj.attr);
 			}
 			localStorage.setItem(obj.name, value);				
 		}			
 	},
 	reset: function(){
-		var bgDom = chrome.extension.getBackgroundPage();
+	//	var bgDom = chrome.extension.getBackgroundPage();
 		for(id in op._bindObjs){
 			var obj = op._bindObjs[id];				
-			var value = bgDom.page._defaultConfig[obj.name];
-			localStorage.setItem(obj.name, value);				
+			//var value = bgDom.page._defaultConfig[obj.name];
+			localStorage.setItem(obj.name, obj.value);				
 		}
 	}
 };	

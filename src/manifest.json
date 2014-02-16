@@ -7,24 +7,24 @@
       "default_icon": "icon.png",
       "default_popup": "popup/popup.html"
    },
-   "content_scripts": [ {
-      "js": [ "js/jquery.js", "js/utils.js", "content/switchUser.js" ],
-      "matches": [ "http://t.sina.com.cn/" ]
-   }, {
-      "js": [ "js/jquery.js", "js/utils.js", "content/switchUser.js" ],
+   "content_scripts": [ 
+    {
+      "js": [ "js/jquery.js", "js/utils.js", "content/switchUser.js"],
       "matches": [ "http://weibo.com/", "http://www.weibo.com/" ]
-   } ],
-   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    },
+    {
+      "js": [ "js/jquery.js", "js/utils.js", "content/hideAD.js"],
+      "matches": [ "http://weibo.com/*", "http://www.weibo.com/*" ]
+    }],
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; 'unsafe-eval'; object-src 'self'",
    "default_locale": "zh_CN",
    "description": "__MSG_extDescription__",
    "icons": {
       "48": "icon.png"
    },
-   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDVdWkXWQbjN1zo6iALSj/W5jQLCx1RxBuezngQYT4ZYqPP39DfxrfLEoFOs8xZlwvaJuMdwVdvrNck/NWHlbYcDVuFK8DnqbayKm6aRdzrGfdsh3b9wlHkBol18LXyui/HCvfwlvCy4W8uQLjUnEw2Z6ToJ3PLdP6rUTXD6jmFwIDAQAB",
    "manifest_version": 2,
    "name": "__MSG_extName__",
    "options_page": "options/options.html",
    "permissions": [ "contextMenus", "tabs", "http://*/*", "https://*/*" ],
-   "update_url": "http://clients2.google.com/service/update2/crx",
-   "version": "0.5.6"
+   "version": "0.5.9"
 }

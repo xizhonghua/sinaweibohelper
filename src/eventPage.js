@@ -81,15 +81,26 @@ var messager = {
                 localStorage.removeItem("curPassword");
             }else if(request.action == "sharePage"){
                 weibo.share(request.tab, null, null);
+            }else if(request.action == "getOption") {
+                sendResponse({
+                    key : request.key,
+                    value :  localStorage.getItem(request.key)
+                });
             }
           });
     }
 }
 
-chrome.contextMenus.onClicked.addListener(pageMenus._onClickHanlder);
-
 messager.init();
 pageMenus.init();
+
+chrome.contextMenus.onClicked.addListener(pageMenus._onClickHanlder);
+
+chrome.runtime.onInstalled.addListener(function(details) { 
+	if(details.reason == "update") {
+		chrome.tabs.create({url: chrome.extension.getURL("options/options.html")});
+	}
+});	
 
 
 

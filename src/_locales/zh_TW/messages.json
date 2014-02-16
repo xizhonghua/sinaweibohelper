@@ -47,6 +47,10 @@
       "description": "text for checkbox whether to hide the ads",
       "message": "\u96B1\u85CF\u5EE3\u544A"
    },
+   "optionsEnableHideAds": {
+      "description": "text for checkbox whether to hide the ads",
+      "message": "隐藏广告"
+    },
    "optionsReset": {
       "description": "text for button to restore default settings",
       "message": "\u9ED8\u8A8D"

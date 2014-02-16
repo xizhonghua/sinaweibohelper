@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" href="../style/common.css"/>
 	<link rel="stylesheet" href="options.css"/>
+	<script type="text/javascript" src="../js/tracking.js"></script>
 </head>
 <body>
 <div id="options">
@@ -11,16 +12,65 @@
 		<div id="switch-user" class="cx-box mgud6">
 			<div class="op-title" id="account-title">{optionsAccountTitle}</div>
 		</div>
-		
+	    
+	    <div class="cx-box mgud6">
+	        <div class="op-title">
+                <label for="chk-enable-hide-AD" id="enable-hide-ads">{optionsEnableHideAds}</label>
+	            <input id="chk-enable-hide-AD" type="checkbox"/> 
+			</div>
+	        <div>
+				
+				<div class="mgud6">Right Column:</div>
+				<ul>
+				    <li class="inner-check">
+    				    <input id="chk-ad-hot-topic" type="checkbox"/>
+	    			    <label for="chk-ad-hot-topic" id="ad-hot-topic">Hot topic</label>
+				    </li>
+				    <li class="inner-check">
+    				    <input id="chk-ad-interest" type="checkbox"/>
+	    			    <label for="chk-ad-interest" id="ad-interest">Interest</label>
+	    			</li>
+	    			<li class="inner-check">
+    				    <input id="chk-ad-hot-weibo" type="checkbox"/>
+	    			    <label for="chk-ad-hot-weibo" id="ad-hot-weibo">Hot weibo</label>
+	    			</li>
+	    			
+	    			<li class="inner-check">
+    				    <input id="chk-ad-hot-music" type="checkbox"/>
+	    			    <label for="chk-ad-hot-music" id="ad-hot-music">
+	    			        Others: music/movie/books/bulletin board
+	    			    </label>
+	    			</li>
+				</ul>
+				
+				<div class="mgud6">Left Column:</div>
+				<ul>
+				<li class="inner-check">
+    				    <input id="chk-ad-app" type="checkbox"/>
+	    			    <label for="chk-ad-app" id="ad-app">Apps</label>
+	    			</li>
+				</ul>
+				
+				<div class="mgud6">Feed:</div>
+				<ul>
+				    <li class="inner-check">
+    				    <input id="chk-ad-title" type="checkbox"/>
+	    			    <label for="chk-ad-title" id="ad-title">Title</label>
+	    			</li>
+	    			<li class="inner-check">
+    				    <input id="chk-ad-find-friend" type="checkbox"/>
+	    			    <label for="chk-ad-find-friend" id="ad-find-friend">Find friend</label>
+	    			</li>
+				</ul>
+			</div>
+	    </div>
+	    	
 		<div id="other-features" class="cx-box mgud6">
 			<div class="op-title" id="others-title">{others}</div>			
 			<div style="display: none;">
 				<input id="chk-load-new-feeds" type="checkbox"/> <span id="auto-load-new-feeds">{optionsAutoLoadNewFeeds}</span>
 			</div>
-<!--	    <div>
-				<input id="chk-hide-AD" type="checkbox"/> <span id="hide-ads">{optionsHideAds}</span>
-			</div>
--->
+    
 			<div>
 				<span id="fromApp">{from}</span> : 
 				<select id="select-fromApp">
@@ -33,15 +83,15 @@
 				</select>
 				AppKey: <input id="input-appkey" type="text"></input>
 			</div>
-		</div>		
-		<div class="cx-hr mgud12"></div>
+		</div>
 		<div id="save-options">
 			<input id="btn-save-options" type="button" value="{Save}" />
 			<input id="btn-reset-options" type="button" value="{Reset}" />
 		</div>
 	</div>
-	<div id="author">
-		©2011-2012 <a href="http://weibo.cn/xxfflower" target="_blank">@xxfflower</a> xizhonghua@gmail.com
+	
+	<div id="copyright">
+		©2011-2014 <a href="http://weibo.com/xxfflower" target="_blank">@xxfflower</a> xizhonghua@gmail.com
 	</div>
 </div>
 
