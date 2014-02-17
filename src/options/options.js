@@ -48,7 +48,7 @@ var op = {
 		op._bind("chk-ad-app", "adApp", "checked", "true");
         op._bind("chk-ad-title", "adTitle", "checked", "true");
         op._bind("chk-ad-find-friend", "adFindFriend", "checked", "true");
-		op._bind("chk-ad-hot-music", "adOthers", "checked", "true");
+		op._bind("chk-ad-others", "adOthers", "checked", "true");
 		
 		
 		// others
@@ -66,14 +66,19 @@ var op = {
 		            $(this).removeAttr("disabled");
 		        }
 		    });
-		   // op.save();
+		    
+		    if(enableHideAD) {
+		        $("#ad-options").show(400);
+		    } else {
+		        $("#ad-options").hide(400);
+		    }
+		    
 		});
 		
 		// save on checkbox changed
 		$("input[id^='chk-'").change(function(){
 		    op.save();
 		});
-		
 		
 		$("#select-fromApp").change(function(){
 			$("#input-appkey").val($("#select-fromApp").val());
@@ -99,7 +104,7 @@ var op = {
 	},
 	i18n: function(){
 	    var ver = " Ver: " + chrome.app.getDetails().version;
-		$("#option-title").html(chrome.i18n.getMessage("optionsTitle") + ver);
+		$("#option-title").html(chrome.i18n.getMessage("optionsTitle"));
 		$("#account-title").html(chrome.i18n.getMessage("optionsAccountTitle"));
 		$(".account").html(chrome.i18n.getMessage("account") + ": ");
 		$(".password").html(chrome.i18n.getMessage("password") + ": ");

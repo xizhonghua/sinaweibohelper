@@ -30,5 +30,5 @@
    "name": "__MSG_extName__",
    "options_page": "options/options.html",
    "permissions": [ "contextMenus", "tabs", "http://*/*", "https://*/*" ],
-   "version": "0.6.1"
+   "version": "0.6.2"
 }

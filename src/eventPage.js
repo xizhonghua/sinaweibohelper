@@ -97,7 +97,8 @@ pageMenus.init();
 chrome.contextMenus.onClicked.addListener(pageMenus._onClickHanlder);
 
 chrome.runtime.onInstalled.addListener(function(details) { 
-	if(details.reason == "update") {
+    // install or update
+	if(details.reason == "update" || details.reason == "install") {
 	    var ver = chrome.app.getDetails().version;
 	    if(localStorage.getItem("version") != ver) {
 		    chrome.tabs.create({url: chrome.extension.getURL("options/options.html")});

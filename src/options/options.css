@@ -1,5 +1,5 @@
 ﻿#options { width:600px; margin:0 auto; }
-#option-title, #save-options { text-align: center; }
+#option-title, #save-options, #ver { text-align: center; }
 
 .inner-check {margin:0 20px;}
 
@@ -7,7 +7,7 @@
 	font-size: 12px;
 	color: #aaa;
 	text-align: center;
-	margin-top:40px;
+	margin-top:20px;
 }
 
 #copyright a {
