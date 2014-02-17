@@ -93,6 +93,9 @@ var op = {
 			$("#show-more").show();
 			$(".account-info:gt(4)").hide();
 		});
+		
+		// ===============
+		$("#whats-new").load("../news.html");
 	},
 	i18n: function(){
 	    var ver = " Ver: " + chrome.app.getDetails().version;
