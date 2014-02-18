@@ -98,13 +98,23 @@ chrome.contextMenus.onClicked.addListener(pageMenus._onClickHanlder);
 
 chrome.runtime.onInstalled.addListener(function(details) { 
     // install or update
-	if(details.reason == "update" || details.reason == "install") {
-	    var ver = chrome.app.getDetails().version;
+    
+    var showOptionPage = false;
+    
+    if(details.reason == "install") showOptionPage = true;
+    else if(details.reason == "update") {
+        var ver = chrome.app.getDetails().version;
 	    if(localStorage.getItem("version") != ver) {
-		    chrome.tabs.create({url: chrome.extension.getURL("options/options.html")});
 		    localStorage.setItem("version", ver);
+		    var v = parseInt(ver.charAt(ver.length-1));
+		    if (v % 2 == 0) //only show stable version
+    		    showOptionPage = true;
 		}
-	}
+    }
+    
+    if(!showOptionPage) return;
+    
+    chrome.tabs.create({url: chrome.extension.getURL("options/options.html")});
 });	
 
 

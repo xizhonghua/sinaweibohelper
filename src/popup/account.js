@@ -28,3 +28,6 @@ if(count>0){
 }else{
 	$("#no-account").show();
 }
+
+
+$("#ad").loadAd();

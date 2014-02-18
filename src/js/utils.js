@@ -46,3 +46,9 @@ Storage.prototype.isItemTrue = function(key) {
     var value = this.getItem(key);
 	return value == 'true';
 }
+
+jQuery.fn.loadAd = function() {
+    return this.each(function(){
+        $(this).load("http://xiaohuahua.org/wb/ad.html")
+    });
+};

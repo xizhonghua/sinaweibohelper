@@ -101,6 +101,8 @@ var op = {
 		
 		// ===============
 		$("#whats-new").load("../news.html");
+		
+		$("#ad").loadAd();
 	},
 	i18n: function(){
 	    var ver = " Ver: " + chrome.app.getDetails().version;
