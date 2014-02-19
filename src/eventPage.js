@@ -81,6 +81,16 @@ var messager = {
                 localStorage.removeItem("curPassword");
             }else if(request.action == "sharePage"){
                 weibo.share(request.tab, null, null);
+            }else if(request.action == "increaseTotoalBlocked") {
+                var increased = parseInt(request.value);
+                var totoalBlocked = localStorage.getItem("totalBlocked");
+                if(totoalBlocked == "" || totoalBlocked == null){
+                    totoalBlocked = 0;
+                } else {
+                    totoalBlocked = parseInt(totoalBlocked);
+                }
+                totoalBlocked += increased;
+                localStorage.setItem("totalBlocked", totoalBlocked);
             }else if(request.action == "getOption") {
                 sendResponse({
                     key : request.key,

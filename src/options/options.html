@@ -15,58 +15,68 @@
 			<div id="whats-new"></div>
 		</div>
 		<div id="switch-user" class="cx-box mgud6">
-			<div class="op-title" id="account-title">{optionsAccountTitle}</div>
+			<div class="op-title" id="account-title">账号设置 - 一键账号切换!</div>
 		</div>
 	    <div class="cx-box mgud6">
 	        <div class="op-title">
-                <label for="chk-enable-hide-AD" id="enable-hide-ads">{optionsEnableHideAds}</label>
-	            <input id="chk-enable-hide-AD" type="checkbox"/> 
+                <input id="chk-enable-hide-AD" type="checkbox"/> 
+                <label for="chk-enable-hide-AD" id="enable-hide-ads">隐藏广告 - 世界瞬间就安静了!</label>
 			</div>
-	        <div id="ad-options">
-				<div class="mgud6">右侧分栏:</div>
-				<ul>
-				    <li class="inner-check">
-    				    <input id="chk-ad-hot-topic" type="checkbox"/>
-	    			    <label for="chk-ad-hot-topic" id="ad-hot-topic">热门话题</label> | 
-    				    <input id="chk-ad-interest" type="checkbox"/>
-	    			    <label for="chk-ad-interest" id="ad-interest">可能感兴趣的人</label> |
-    				    <input id="chk-ad-hot-weibo" type="checkbox"/>
-	    			    <label for="chk-ad-hot-weibo" id="ad-hot-weibo">热门微博</label> |
-    				    <input id="chk-ad-others" type="checkbox"/>
-	    			    <label for="chk-ad-others" id="ad-others">
+	        <div id="ad-options">				
+				<div class="mgud6">
+                    <span class="ad-type-title">左边栏:</span>
+                    <span class="ad-type">
+                        <input id="chk-ad-app" type="checkbox"/>
+                        <label for="chk-ad-app" id="ad-app">官方应用/最近应用</label>
+                    </span>
+                </div>
+                				
+				<div class="mgud6">
+				    <span class="ad-type-title">时间轴:</span>
+				    <span class="ad-type">
+                        <input id="chk-ad-title" type="checkbox"/>
+                        <label for="chk-ad-title" id="ad-title">标题</label> 
+                    </span>
+                    <span class="ad-type">
+                        <input id="chk-ad-find-friend" type="checkbox"/>
+                        <label for="chk-ad-find-friend" id="ad-find-friend">好友推荐</label>
+                    </span>
+    			</div>
+    			
+                <div class="mgud6">
+				    <span class="ad-type-title">右边栏:</span>
+				        <span class="ad-type">
+        				    <input id="chk-ad-hot-topic" type="checkbox"/>
+	        			    <label for="chk-ad-hot-topic" id="ad-hot-topic">热门话题</label> 
+	    			    </span>
+	    			    <span class="ad-type">
+        				    <input id="chk-ad-interest" type="checkbox"/>
+	        			    <label for="chk-ad-interest" id="ad-interest">可能感兴趣的人</label>
+	        			</span>
+	        			<span class="ad-type">
+        				    <input id="chk-ad-hot-weibo" type="checkbox"/>
+	        			    <label for="chk-ad-hot-weibo" id="ad-hot-weibo">热门微博</label>
+	        			</span>
+	        			<span class="ad-type">
+        				    <input id="chk-ad-others" type="checkbox"/>
+	        			    <label for="chk-ad-others" id="ad-others">
 	    			        其他: 会员专区/热门电影/人气图书/公告栏
-	    			    </label>
-	    			</li>
-				</ul>
-				
-				<div class="mgud6">左侧分栏:</div>
-				<ul>
-				<li class="inner-check">
-    				    <input id="chk-ad-app" type="checkbox"/>
-	    			    <label for="chk-ad-app" id="ad-app">官方应用/最近应用</label>
-	    			</li>
-				</ul>
-				
-				<div class="mgud6">时间轴:</div>
-				<ul>
-				    <li class="inner-check">
-    				    <input id="chk-ad-title" type="checkbox"/>
-	    			    <label for="chk-ad-title" id="ad-title">标题</label> |
-    				    <input id="chk-ad-find-friend" type="checkbox"/>
-	    			    <label for="chk-ad-find-friend" id="ad-find-friend">好友推荐</label>
-	    			</li>
-				</ul>
-			</div>
+	        			    </label>
+	        			</span>
+	            </div>
+    		</div>
 	    </div>
+	    
+	    <div id="other-features" class="cx-box mgud6">
+			<div class="op-title" id="keywords-title">关键词屏蔽 - 妈妈再也不用担心我被刷屏了!</div>
+			<input id="txt-keywords" placeholder="输入要屏蔽的关键词（用,分隔）"/>
+		</div>
 	    	
 		<div id="other-features" class="cx-box mgud6">
-			<div class="op-title" id="others-title">{others}</div>			
-			<div style="display: none;">
-				<input id="chk-load-new-feeds" type="checkbox"/> <span id="auto-load-new-feeds">{optionsAutoLoadNewFeeds}</span>
-			</div>
+			<div class="op-title" id="others-title">自定义分享尾巴 - 屌丝变土豪!</div>
     
 			<div>
-				<span id="fromApp">{from}</span> : 
+				<span id="fromApp">via</span> : 
 				<select id="select-fromApp">
 					<option value="" id="option-default">{Default}</option>
 					<option value="5786724301">iPhone</option>
@@ -78,9 +88,34 @@
 				AppKey: <input id="input-appkey" type="text"></input>
 			</div>
 		</div>
-		<div id="save-options">
+		
+	
+	<div class="cx-box mgud6">
+        <div class="op-title">捐赠 - 帮助我们做的更好!</div>
+        <div id="donation">
+            <span>
+                <a href="https://me.alipay.com/xizhonghua" target="_blank">
+                    <img src="/images/alipay.jpg">
+                </a>
+            </span>
+            
+            <span>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="display:inline">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                ">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </span>
+            
+            
+        </div>
+	</div>
+	
+	<div id="save-options">
 			<input id="btn-save-options" type="button" value="{Save}" />
-			<input id="btn-reset-options" type="button" value="{Reset}" />
+<!-- 			<input id="btn-reset-options" type="button" value="{Reset}" /> -->
 		</div>
 	</div>
 	

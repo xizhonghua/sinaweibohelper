@@ -1,7 +1,12 @@
-﻿#options { width:600px; margin:0 auto; }
+﻿#options { width:640px; margin:0 auto; }
 #option-title, #save-options, #ver { text-align: center; }
 
 .inner-check {margin:0 20px;}
+
+#txt-keywords { width:600px;}
+
+.ad-type-title { width:40px; display:inline-block; }
+.ad-type { margin:0 4px; display:inline-block; }
 
 #copyright {
 	font-size: 12px;
@@ -18,6 +23,11 @@
 #copyright a:hover {
 	background: #333;
 	color: #eee;
+}
+
+#donation {
+    margin:8px;
+    text-align: center;
 }
 
 .input-name { width:240px; }

@@ -1,5 +1,6 @@
 var op = {
 	maxAccount: 12,
+	defaultAccount : 3,
 	_bindObjs:[],
 	// _bind
 	// id: the id of the element to bind
@@ -31,7 +32,7 @@ var op = {
 				.append('<span class="account">{account}</span> <input type="text" class="input-name"/> ')
 				.append('<span class="password">{password}</span> <input type="password" class="input-password" />')
 				.appendTo("#switch-user");
-			if(i==4) {
+			if(i==op.defaultAccount-1) {
 				$("<div><div>")
 				.html('<a id="show-more" href="javascript:void(0)">More</a>').appendTo("#switch-user");
 			}else if(i == op.maxAccount-1){
@@ -54,18 +55,12 @@ var op = {
 		// others
 		op._bind("chk-load-new-feeds", "autoLoadNewFeeds", "checked", "true");
 		op._bind("input-appkey", "fromAppkey", "val", "");
+		op._bind("txt-keywords", "keywords", "val", "");
 		
 		//========================================
 		
 		$("#chk-enable-hide-AD").change(function(){
 		    var enableHideAD = $(this).prop("checked");
-		    $(".inner-check > input").each(function(index, val){
-		        if(!enableHideAD) {
-		            $(this).attr("disabled", true);
-		        }else{
-		            $(this).removeAttr("disabled");
-		        }
-		    });
 		    
 		    if(enableHideAD) {
 		        $("#ad-options").show(400);
@@ -84,11 +79,11 @@ var op = {
 			$("#input-appkey").val($("#select-fromApp").val());
 		});
 		
-		$(".account-info:gt(4)").hide();
+		$(".account-info:gt("  + (op.defaultAccount-1) +  ")").hide();
 		$("#hide-more").hide();
 		
 		$("#show-more").click(function(){
-			$(".account-info:gt(4)").slideDown();
+			$(".account-info:gt(" + (op.defaultAccount-1) + ")").slideDown();
 			$(this).hide();
 			$("#hide-more").show();
 		});
@@ -96,7 +91,7 @@ var op = {
 		$("#hide-more").click(function(){
 			$(this).hide();
 			$("#show-more").show();
-			$(".account-info:gt(4)").hide();
+			$(".account-info:gt("  + (op.defaultAccount-1) +  ")").hide();
 		});
 		
 		// ===============
@@ -107,16 +102,14 @@ var op = {
 	i18n: function(){
 	    var ver = " Ver: " + chrome.app.getDetails().version;
 		$("#option-title").html(chrome.i18n.getMessage("optionsTitle"));
-		$("#account-title").html(chrome.i18n.getMessage("optionsAccountTitle"));
 		$(".account").html(chrome.i18n.getMessage("account") + ": ");
 		$(".password").html(chrome.i18n.getMessage("password") + ": ");
-		$("#others-title").html(chrome.i18n.getMessage("others"));
+		
 		$("#auto-load-new-feeds").html(chrome.i18n.getMessage("optionsAutoLoadNewFeeds"));
 		
 		$("#hide-ads").html(chrome.i18n.getMessage("optionsHideAds"));
-		$("#enable-hide-ads").html(chrome.i18n.getMessage("optionsEnableHideAds"));
 		
-		$("#fromApp").html(chrome.i18n.getMessage("fromApp"));
+		//$("#fromApp").html(chrome.i18n.getMessage("fromApp"));
 		$("#option-default").html(chrome.i18n.getMessage("default"));
 		$("#option-custom").html(chrome.i18n.getMessage("custom"));
 		
@@ -146,7 +139,7 @@ var op = {
 		
 		var appKey = op._getConfig("fromAppkey", "");
 		
-		console.log("appKey:" + appKey);
+		//console.log("appKey:" + appKey);
 		
 		$('#select-fromApp').val(appKey);
 		
@@ -159,6 +152,13 @@ var op = {
         $("#chk-enable-hide-AD").change();
 	},
 	save: function(){
+	    var keywords = $("#txt-keywords").val();
+	    
+	    keywords = keywords.replace(/，/g, ",");
+        keywords = keywords.replace(/\s*/g, "");
+	    
+	    $("#txt-keywords").val(keywords);
+	
 		for(var i=0;i<op.maxAccount;i++){
 			var name = $.trim($(".input-name:eq(" + i + ")").val());
 			var password = $(".input-password:eq(" + i + ")").val();				

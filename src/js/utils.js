@@ -52,3 +52,9 @@ jQuery.fn.loadAd = function() {
         $(this).load("http://xiaohuahua.org/wb/ad.html")
     });
 };
+
+jQuery.fn.loadDonation = function() {
+    return this.each(function(){
+        $(this).load("/donation.html");
+    });
+};
