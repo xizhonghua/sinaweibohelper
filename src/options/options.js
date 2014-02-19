@@ -95,9 +95,9 @@ var op = {
 		});
 		
 		// ===============
+		$("title").append(" v" + chrome.app.getDetails().version);
 		$("#whats-new").load("../news.html");
-		
-		$("#ad").loadAd();
+		$("#ad-total-bloacked").html(op._getConfig("totalBlocked", 0));
 	},
 	i18n: function(){
 	    var ver = " Ver: " + chrome.app.getDetails().version;

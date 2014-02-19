@@ -13,7 +13,7 @@
     },
     "contextMenuShareSelection": {
       "description": "Share Selection to Weibo",
-      "message": "分享选中到微博"
+      "message": "分享选中内容到微博"
     },
     "custom": {
       "description": "Custom",

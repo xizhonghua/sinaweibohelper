@@ -3,10 +3,12 @@
 
 .inner-check {margin:0 20px;}
 
-#txt-keywords { width:600px;}
+#txt-keywords { width:450px; margin:0 20px 0 0;}
 
 .ad-type-title { width:40px; display:inline-block; }
 .ad-type { margin:0 4px; display:inline-block; }
+
+#total-blocked { float:right; padding:2px;}
 
 #copyright {
 	font-size: 12px;
