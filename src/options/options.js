@@ -15,11 +15,11 @@ var op = {
 		}
 	},		
 	_getConfig: function(name){
-		var defaultValue = arguments[1] ? arguments[1] : null;
+		var defaultValue = (arguments[1] != undefined) ? arguments[1] : null;
 		var value = localStorage.getItem(name);
 		if(value == "true") value = true;
 		if(value == "false") value = false;
-		if(value == null) return defaultValue
+		if(value == null || value == undefined) return defaultValue
 		return  value;
 	},
 	_setConfig: function(name, value){
@@ -48,6 +48,7 @@ var op = {
 		op._bind("chk-ad-hot-weibo", "adHotWeibo", "checked", "true");
 		op._bind("chk-ad-app", "adApp", "checked", "true");
         op._bind("chk-ad-title", "adTitle", "checked", "true");
+        op._bind("chk-ad-biztips", "bizTips", "checked", "true");
         op._bind("chk-ad-find-friend", "adFindFriend", "checked", "true");
 		op._bind("chk-ad-others", "adOthers", "checked", "true");
 		
@@ -97,6 +98,7 @@ var op = {
 		// ===============
 		$("title").append(" v" + chrome.app.getDetails().version);
 		$("#whats-new").load("../news.html");
+        $("#ad-total-ad-blocked").html(op._getConfig("totalAdBlocked", 0));		
 		$("#ad-total-bloacked").html(op._getConfig("totalBlocked", 0));
 	},
 	i18n: function(){

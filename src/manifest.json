@@ -20,7 +20,7 @@
         "js": [ "js/jquery.js", "js/utils.js", "content/switchUser.js"],
         "matches": [ "http://us.weibo.com/*", "http://hk.weibo.com/", "http://weibo.com/login.php", "http://www.weibo.com/login.php"]
     }],
-   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; 'unsafe-eval'; object-src 'self'",
+   "content_security_policy": "script-src 'self' https://stats.g.doubleclick.net; 'unsafe-eval'; object-src 'self'",
    "default_locale": "zh_CN",
    "description": "__MSG_extDescription__",
    "icons": {
@@ -30,5 +30,5 @@
    "name": "__MSG_extName__",
    "options_page": "options/options.html",
    "permissions": [ "contextMenus", "tabs", "http://*/*", "https://*/*" ],
-   "version": "0.6.4"
+   "version": "0.6.8"
 }

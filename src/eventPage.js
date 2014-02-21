@@ -81,16 +81,26 @@ var messager = {
                 localStorage.removeItem("curPassword");
             }else if(request.action == "sharePage"){
                 weibo.share(request.tab, null, null);
-            }else if(request.action == "increaseTotoalBlocked") {
+            }else if(request.action == "increaseTotalBlocked") {
                 var increased = parseInt(request.value);
-                var totoalBlocked = localStorage.getItem("totalBlocked");
-                if(totoalBlocked == "" || totoalBlocked == null){
-                    totoalBlocked = 0;
+                var totalBlocked = localStorage.getItem("totalBlocked");
+                if(totalBlocked == "" || totalBlocked == null){
+                    totalBlocked = 0;
                 } else {
-                    totoalBlocked = parseInt(totoalBlocked);
+                    totalBlocked = parseInt(totalBlocked);
                 }
-                totoalBlocked += increased;
-                localStorage.setItem("totalBlocked", totoalBlocked);
+                totalBlocked += increased;
+                localStorage.setItem("totalBlocked", totalBlocked);
+            }else if(request.action == "increaseTotalAdBlocked") {
+                var increased = parseInt(request.value);
+                var totalAdBlocked = localStorage.getItem("totalAdBlocked");
+                if(totalAdBlocked == "" || totalAdBlocked == null){
+                    totalAdBlocked = 0;
+                } else {
+                    totalAdBlocked = parseInt(totalAdBlocked);
+                }
+                totalAdBlocked += increased;
+                localStorage.setItem("totalAdBlocked", totalAdBlocked);
             }else if(request.action == "getOption") {
                 sendResponse({
                     key : request.key,

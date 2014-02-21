@@ -30,4 +30,4 @@ if(count>0){
 }
 
 
-$("#ad").loadAd();
+$("title").append(" v" + chrome.app.getDetails().version);

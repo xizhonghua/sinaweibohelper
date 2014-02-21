@@ -59,7 +59,7 @@ var pPopup = {
 			chrome.tabs.create({url:chrome.extension.getURL("options/options.html")});
 		});
 		
-		$("#ad").loadAd();
+		$("title").append(" v" + chrome.app.getDetails().version);
 	}
 }
 	
