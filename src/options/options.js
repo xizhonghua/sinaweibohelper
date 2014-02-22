@@ -44,17 +44,16 @@ var op = {
 		// bind ads
 		op._bind("chk-enable-hide-AD", "enableHideAD", "checked", "true");
 		op._bind("chk-ad-hot-topic", "adHotTopic", "checked", "false");
-		op._bind("chk-ad-interest", "adInerest", "checked", "true");
+		op._bind("chk-ad-interest", "adInterest", "checked", "true");
 		op._bind("chk-ad-hot-weibo", "adHotWeibo", "checked", "true");
 		op._bind("chk-ad-app", "adApp", "checked", "true");
         op._bind("chk-ad-title", "adTitle", "checked", "true");
-        op._bind("chk-ad-biztips", "bizTips", "checked", "true");
+        op._bind("chk-ad-biztips", "adBizTips", "checked", "true");
         op._bind("chk-ad-find-friend", "adFindFriend", "checked", "true");
 		op._bind("chk-ad-others", "adOthers", "checked", "true");
 		
 		
 		// others
-		op._bind("chk-load-new-feeds", "autoLoadNewFeeds", "checked", "true");
 		op._bind("input-appkey", "fromAppkey", "val", "");
 		op._bind("txt-keywords", "keywords", "val", "");
 		

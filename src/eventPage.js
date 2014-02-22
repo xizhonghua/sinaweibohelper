@@ -111,10 +111,41 @@ var messager = {
     }
 }
 
+var defaultOptions = {
+    enableHideAD : true,
+    adHotTopic : false,
+    adInterest : true,
+    adHotWeibo : true,
+    adApp : true,
+    adTitle : true,
+    adBizTips : true,
+    adFindFriend : true,
+    adOthers : true,
+    fromAppkey : "",
+    keywords : "",
+    totalBlocked : 0,
+    totalAdBlocked : 0
+};
+
+var options = {
+    // check every default option value
+    init : function() {
+        for(var key in defaultOptions) {
+            if(!localStorage.getItem(key) != undefined) continue;
+            localStorage.setItem(key, defaultOptions[key]);
+        }
+    }
+};
+
+options.init();
 messager.init();
 pageMenus.init();
 
 chrome.contextMenus.onClicked.addListener(pageMenus._onClickHanlder);
+
+
+
+
 
 chrome.runtime.onInstalled.addListener(function(details) { 
     // install or update

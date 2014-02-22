@@ -70,6 +70,10 @@ function hideAll() {
         hideClosest('img[src*="face_friend"]','.WB_feed_type');
     });
     
+    checkEnable("adBizTips", function() {
+        $("#pl_content_biztips").hideEx(false); 
+    });
+    
     checkEnable("adOthers", function() {
         hideRightModule("a:contains('会员专区')", false);
         hideRightModule("legend:contains('最新电影')", false);
@@ -83,6 +87,7 @@ function hideAll() {
         hideRightModule("legend:contains('热门商品推荐')", false);
         hideRightModule("iframe[id*='ad']");
         
+       
         $("div[ad-data*='ads_bottom']").hideEx();
     });
         

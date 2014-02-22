@@ -1,5 +1,5 @@
 ﻿#options { width:640px; margin:0 auto; }
-#option-title, #save-options, #ver { text-align: center; }
+#option-title, #save-options, #ver { text-align: center; margin:10px; }
 
 .inner-check {margin:0 20px;}
 
@@ -14,7 +14,7 @@
 	font-size: 12px;
 	color: #aaa;
 	text-align: center;
-	margin-top:20px;
+	margin-top:12px;
 }
 
 #copyright a {
@@ -34,5 +34,5 @@
 
 .input-name { width:240px; }
 .input-password {width:100px;}
-.op-title {font-size:14px; font-weight:bold; margin:0 0 12px 0;}
+.op-title {font-size:14px; font-weight:bold; margin:0 0 8px 0;}
 .account-info { margin:2px 0; }

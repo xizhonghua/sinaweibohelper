@@ -4,7 +4,7 @@ a:hover {text-decoration:none; color:red;}
 ul { padding:0; margin:0; }
 li { padding:0; margin:0; list-style:none;}
 
-.cx-box {background-color:#F3F7FC; border:1px solid #D2DBED; border-radius:4px; padding:8px;}
+.cx-box {background-color:#F3F7FC; border:1px solid #D2DBED; border-radius:4px; padding:4px 8px;}
 .cx-hr {border-bottom:1px solid #D6DFEF; width:100%;}
 .mgud6 {margin:6px 0;}
 .mgud12 {margin:12px 0;}
