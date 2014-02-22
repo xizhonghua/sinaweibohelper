@@ -47,7 +47,7 @@ function hideAll() {
         
     });
     
-    checkEnable("adInerest", function() {
+    checkEnable("adInterest", function() {
         hideRightModule("a[href*='weibo.com/find']");
         hideRightModule("legend:contains('可能感兴趣的人')", false);
     });
