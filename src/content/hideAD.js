@@ -87,6 +87,9 @@ function hideAll() {
         hideRightModule("legend:contains('热门商品推荐')", false);
         hideRightModule("iframe[id*='ad']");
         
+        // 4/3/2014 added
+        hideRightModule("legend:contains('活动')", false);
+        
        
         $("div[ad-data*='ads_bottom']").hideEx();
     });
