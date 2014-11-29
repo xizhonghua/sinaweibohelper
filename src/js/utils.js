@@ -33,6 +33,11 @@ var Utils = {
             },
         });
 	},
+    fillInput: function ($ele, val){
+        $ele.focus();
+        Utils.triggerClick($ele.get(0));
+        $ele.val(val);
+    },
 	getQueryStringByName:function(name){ 
 		var result = location.search.match(new RegExp("[\?\&]" + name+ "=([^\&]+)","i")); 
 		if(result == null || result.length < 1){ 

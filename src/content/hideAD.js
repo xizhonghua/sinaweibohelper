@@ -49,7 +49,10 @@ function hideAll() {
     
     checkEnable("adInterest", function() {
         hideRightModule("a[href*='weibo.com/find']");
+        // v5
         hideRightModule("legend:contains('可能感兴趣的人')", false);
+        // v6 added 11/29/2014
+        hideRightModule("a:contains('可能感兴趣的人')", false);
     });
     
     checkEnable("adHotWeibo", function() {
@@ -63,7 +66,10 @@ function hideAll() {
     
     checkEnable('adTitle', function() {
         $(".title_area").remove();
-        $(".input").css({"margin-top" : "-12px"});
+        $(".input").css({"margin-top" : "-10px"});
+
+        // v6 11/29/2014 added
+        $('#v6_pl_content_publishertop').css({"margin-top" : "-10px", "margin-bottom" : "-50px"});
     });
     
     checkEnable("adFindFriend", function() {
@@ -71,7 +77,11 @@ function hideAll() {
     });
     
     checkEnable("adBizTips", function() {
+        // v5
         $("#pl_content_biztips").hideEx(false); 
+
+        // v6 added 11/29/2014
+        $("#v6_pl_content_biztips").hideEx(false); 
     });
     
     checkEnable("adOthers", function() {
@@ -85,7 +95,14 @@ function hideAll() {
         
         // 2/21/2014 added
         hideRightModule("legend:contains('热门商品推荐')", false);
+        // 11/29/2014 added
+        hideRightModule("span:contains('热门商品推荐')", false);
+
         hideRightModule("iframe[id*='ad']");
+        
+        // right ad
+        // 11/29/2014 added
+        $("div[id^='v6_pl_rightmod_ad']").hideEx(false);
         
         // 4/3/2014 added
         hideRightModule("legend:contains('活动')", false);
@@ -175,5 +192,8 @@ function init() {
     });
 }
 
-
-init();
+if (/weibo\.com\/login\.php/.test(window.location.href)){
+    //login page do nothing
+} else {
+    init();
+}
