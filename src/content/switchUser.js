@@ -4,6 +4,10 @@ function loginWeibo(name, password) {
     var $inputName = $("input[name='username']");
     var $inputPassword = $("input[name='password']");
     var $submit = $('a[action-type="btn_submit"]');
+    var $normalTab = $('a[node-type="normal_tab"]');
+
+    // switch to normal login tab
+    Utils.triggerClick($normalTab.get(0));
 
     if(!$inputPassword.is(':visible') || ! $inputName.is(':visible')) {
         setTimeout(function(){

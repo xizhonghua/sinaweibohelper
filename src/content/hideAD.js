@@ -99,16 +99,36 @@ function hideAll() {
         hideRightModule("span:contains('热门商品推荐')", false);
 
         hideRightModule("iframe[id*='ad']");
-        
-        // right ad
-        // 11/29/2014 added
-        $("div[id^='v6_pl_rightmod_ad']").hideEx(false);
-        
+
         // 4/3/2014 added
         hideRightModule("legend:contains('活动')", false);
         
        
         $("div[ad-data*='ads_bottom']").hideEx();
+
+        // right ad
+        // 11/29/2014 added
+        $("div[id^='v6_pl_rightmod_ad']").hideEx(false);        
+
+        ////////////////////////////////////////////////////////////
+        // right recommend
+        // v6 manual
+        // 1/4/2014 added
+        $("div[id^='v6_pl_rightmod_recominfo']").hideEx(false);        
+        $("div[id^='v6_pl_rightmod_updatev6']").hideEx(false);
+        
+        ////////////////////////////////////////////////////////////
+
+
+        ////////////////////////////////////////////////////////////
+        // right recommend
+        // 微博电影想看榜, 好友关注动态
+        // 2/5/2016 added
+        $("div[id^='v6_pl_rightmod_rank']").hideEx(false);        
+        $("div[id^='v6_pl_rightmod_attfeed']").hideEx(false);
+        
+        ////////////////////////////////////////////////////////////
+
     });
         
     setTimeout(hideAll, 1000);
