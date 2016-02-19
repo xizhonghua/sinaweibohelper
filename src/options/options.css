@@ -35,17 +35,14 @@
 
 #paypal {
 	display: inline-block;
-	width: 240px;	
-}
-
-#alipay {
-	display: inline-block;	
-	width: 180px;	
+	vertical-align: super
 }
 
 #alipay-qr {
 	display: inline-block;	
-	width: 60px;	
+	vertical-align: bottom;
+	width: 150px;
+	text-align: left;
 }
 
 .vbar {

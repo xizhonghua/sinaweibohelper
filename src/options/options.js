@@ -95,15 +95,13 @@ var op = {
 			$(".account-info:gt("  + (op.defaultAccount-1) +  ")").hide();
 		});
 		
-		// ===============
-		$("title").append(" v" + chrome.app.getDetails().version);
-		// $("#whats-new").load("../news.html");
+		// ===============				
 		$("#ad-total-ad-blocked").html(op._getConfig("totalAdBlocked", 0));		
 		$("#ad-total-bloacked").html(op._getConfig("totalBlocked", 0));
 	},
 	i18n: function(){
-	    var ver = " Ver: " + chrome.app.getDetails().version;
-		$("#option-title").html(chrome.i18n.getMessage("optionsTitle"));
+	  var ver = " Ver: " + chrome.app.getDetails().version;
+		$("#option-title").html(chrome.i18n.getMessage("optionsTitle") + ver);
 		$(".account").html(chrome.i18n.getMessage("account") + ": ");
 		$(".password").html(chrome.i18n.getMessage("password") + ": ");
 		$(".comment").html(chrome.i18n.getMessage("comment") + ": ");

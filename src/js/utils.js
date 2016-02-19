@@ -14,20 +14,20 @@ var Utils = {
 		console.log(element + ".click_triggered!");
 	},
 	shortenUrl:function(longUrl, callback) {
+        console.log("shortenUrl longUrl = " + longUrl);
         $.ajax({
-            data: JSON.stringify({
+            data:{
                 "longUrl": longUrl,
-                "key": "AIzaSyDXmb0WHAAlKfVfus46ctr4jOYwgibctM0"
-            }),
-            type: "POST",
-            url: "https://www.googleapis.com/urlshortener/v1/url",
+                "access_token": '8b99cc643a56ba4a9b14b9e8e3e3ba7f9112bdd4',
+                "format" : "txt"
+            },
+            type: "GET",
+            url: "https://api-ssl.bitly.com/v3/shorten",
             timeout: 20000,
-            contentType: "application/json",
-            dataType: 'json',
-            success: function(data) {
-                if(data.id){
-					   callback(data.id);
-				 }else{
+            success: function(data) {                
+                if(data){
+					   callback(data);
+				 } else{
                        callback("error");
 				 }
             },

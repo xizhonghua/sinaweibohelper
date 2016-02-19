@@ -6,7 +6,7 @@ var pPopup = {
 	$btnShorten: $("#btn-shorten"),
 	$btnSwitch: $("#btn-switch"),
 	$btnOption: $("#btn-option"),
-    $extensionVersion: $("#extension-version"),
+  $extensionVersion: $("#extension-version"),
 	i18n: function(){
 		pPopup.$btnHome.html(chrome.i18n.getMessage("popupHome"));
 		pPopup.$btnAtMe.html(chrome.i18n.getMessage("popupAtMe"));
@@ -47,7 +47,8 @@ var pPopup = {
 		
 		// shorten clicked
 		pPopup.$btnShorten.click(function(){
-			chrome.tabs.getSelected(null, function(tab) {										
+			chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+    		var tab = tabs[0];    		        				
 				Utils.shortenUrl(tab.url, function(url) {
 					location.href = "shorten.html?shortUrl=" + url;
 				});
