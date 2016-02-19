@@ -30,7 +30,8 @@ var op = {
 		for(var i=0;i<op.maxAccount;i++) {
 			$("<div></div>").addClass("account-info")
 				.append('<span class="account">{account}</span> <input type="text" class="input-name"/> ')
-				.append('<span class="password">{password}</span> <input type="password" class="input-password" />')
+				.append('<span class="password">{password}</span> <input type="password" class="input-password" /> ')
+				.append('<span class="comment">{comment}</span> <input type="text" class="input-comment" />')
 				.appendTo("#switch-user");
 			if(i==op.defaultAccount-1) {
 				$("<div><div>")
@@ -96,8 +97,8 @@ var op = {
 		
 		// ===============
 		$("title").append(" v" + chrome.app.getDetails().version);
-		$("#whats-new").load("../news.html");
-        $("#ad-total-ad-blocked").html(op._getConfig("totalAdBlocked", 0));		
+		// $("#whats-new").load("../news.html");
+		$("#ad-total-ad-blocked").html(op._getConfig("totalAdBlocked", 0));		
 		$("#ad-total-bloacked").html(op._getConfig("totalBlocked", 0));
 	},
 	i18n: function(){
@@ -105,6 +106,7 @@ var op = {
 		$("#option-title").html(chrome.i18n.getMessage("optionsTitle"));
 		$(".account").html(chrome.i18n.getMessage("account") + ": ");
 		$(".password").html(chrome.i18n.getMessage("password") + ": ");
+		$(".comment").html(chrome.i18n.getMessage("comment") + ": ");
 		
 		$("#auto-load-new-feeds").html(chrome.i18n.getMessage("optionsAutoLoadNewFeeds"));
 		
@@ -121,9 +123,11 @@ var op = {
 		// refresh account
 		for(var i = 0; i < op.maxAccount; i++){
 			var name = localStorage.getItem("name" + i);
-			var password = localStorage.getItem("password" + i);				
+			var password = localStorage.getItem("password" + i);
+			var comment = localStorage.getItem("comment" + i);
 			$(".input-name:eq(" + i + ")").val(name);
 			$(".input-password:eq(" + i + ")").val(password);
+			$(".input-comment:eq(" + i + ")").val(comment);
 		}
 		
 		for(id in op._bindObjs){
@@ -162,9 +166,11 @@ var op = {
 	
 		for(var i=0;i<op.maxAccount;i++){
 			var name = $.trim($(".input-name:eq(" + i + ")").val());
-			var password = $(".input-password:eq(" + i + ")").val();				
+			var password = $(".input-password:eq(" + i + ")").val();
+			var comment = $(".input-comment:eq(" + i + ")").val();
 			localStorage.setItem("name" + i, name);
 			localStorage.setItem("password" + i, password);
+			localStorage.setItem("comment" + i, comment);
 		}
 		for(id in op._bindObjs){
 			var obj=op._bindObjs[id];

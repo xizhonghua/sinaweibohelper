@@ -32,7 +32,31 @@
     text-align: center;
 }
 
-.input-name { width:240px; }
+
+#paypal {
+	display: inline-block;
+	width: 240px;	
+}
+
+#alipay {
+	display: inline-block;	
+	width: 180px;	
+}
+
+#alipay-qr {
+	display: inline-block;	
+	width: 60px;	
+}
+
+.vbar {
+	border-right: 1px solid #999;	
+	display:inline-block;
+	width: 1px;
+	margin: 4px 20px;
+}
+
+.input-name { width:180px; }
 .input-password {width:100px;}
+.input-comment {width:100px;}
 .op-title {font-size:14px; font-weight:bold; margin:4px 0;}
 .account-info { margin:2px 0; }

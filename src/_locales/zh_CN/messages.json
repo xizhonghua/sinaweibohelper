@@ -75,6 +75,10 @@
       "description": "password",
       "message": "密码"
     },
+    "comment": {
+      "description": "comment",
+      "message": "备注"
+    },
     "popupAddAccount": {
       "description": "add account",
       "message": "添加帐号"
